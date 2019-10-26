@@ -3,12 +3,11 @@
     "version": "0.0.1",
     "private": true,
     "scripts": {
-        "build": "vue-cli-service build --target lib --name vue-context-light ./src/lib.js",
+        "build": "vue-cli-service build --target lib --name vue-context-light ./src/components/ContextMenu.vue",
         "serve": "vue-cli-service serve"
     },
     "main": "./dist/vue-context-light.common.js",
     "dependencies": {
-        "vue": "^2.6.10",
         "vue-clickaway": "^2.2.2"
     },
     "devDependencies": {
@@ -19,6 +18,9 @@
         "eslint": "^6.5.1",
         "eslint-plugin-vue": "^5.2.3",
         "vue-template-compiler": "^2.6.10"
+    },
+    "peerDependencies": {
+        "vue": "^2.6.10"
     },
     "eslintConfig": {
         "root": true,

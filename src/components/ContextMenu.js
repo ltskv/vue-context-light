@@ -18,7 +18,6 @@ export default {
     }
   },
   methods: {
-    debug () { console.log('hui'); },
 
     /*
      * this function handles some cross-browser compat issues
@@ -31,11 +30,11 @@ export default {
         document.scrollingElement || document.documentElement
 
       if (e.pageX || e.pageY) {
-        this.ctxLeft = e.pageX
-        this.ctxTop = e.pageY - scrollingElement.scrollTop
+        this.ctxLeft = e.pageX + 5;
+        this.ctxTop = e.pageY - scrollingElement.scrollTop + 5;
       } else if (e.clientX || e.clientY) {
-        this.ctxLeft = e.clientX + scrollingElement.scrollLeft
-        this.ctxTop = e.clientY + scrollingElement.scrollTop
+        this.ctxLeft = e.clientX + scrollingElement.scrollLeft + 5;
+        this.ctxTop = e.clientY + scrollingElement.scrollTop + 5;
       }
 
 
@@ -60,11 +59,9 @@ export default {
       this.ctxVisible = true;
       this.setPositionFromEvent(e);
       this.$el.setAttribute('tab-index', -1);
-      console.log('open');
     },
     kill() {
       if (this.ctxVisible) this.ctxVisible = false;
-      console.log('close');
     }
   },
   computed: {
