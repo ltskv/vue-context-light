@@ -22,6 +22,9 @@ export default {
     /*
      * this function handles some cross-browser compat issues
      * thanks to https://github.com/callmenick/Custom-Context-Menu
+     *
+     * and also thanks to https://github.com/vmaimone/vue-context-menu
+     * from whom I stole this code and the above acknowledgement
      */
     setPositionFromEvent(e) {
       e = e || window.event

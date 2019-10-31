@@ -12,4 +12,23 @@
 
 <script src="./ContextMenu.js"></script>
 
-<style src="./ContextMenu.css"></style>
+<style>
+
+.ctx-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.ctx-menu > li:hover {
+  cursor: pointer;
+}
+
+.ctx-menu-container {
+  position: fixed;
+  padding: 0;
+  background-color: white;
+  z-index: 99999;
+}
+
+</style>
