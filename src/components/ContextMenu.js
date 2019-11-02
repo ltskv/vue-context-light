@@ -3,19 +3,20 @@ import {mixin as clickaway} from 'vue-clickaway';
 export default {
   name: 'ContextMenu',
   mixins: [clickaway],
-  props: {
-    id: {
-      type: String,
-      default: 'default-ctx'
-    }
-  },
   data() {
     return {
       align: 'left',
       ctxTop: 0,
       ctxLeft: 0,
       ctxVisible: false,
+      openEvent: null
     }
+  },
+  created() {
+    window.addEventListener('ctx-menu-opened', this.handleMenuOpening);
+  },
+  destroyed() {
+    window.removeEventListener('ctx-menu-opened', this.handleMenuOpening);
   },
   methods: {
 
@@ -57,14 +58,23 @@ export default {
         if (this.ctxLeft > largestWidth) this.ctxLeft = largestWidth;
       })
     },
-
     open(e) {
-      this.ctxVisible = true;
+      this.openEvent = e;
       this.setPositionFromEvent(e);
       this.$el.setAttribute('tab-index', -1);
+      window.dispatchEvent(new CustomEvent('ctx-menu-opened', {detail: e}));
+      this.ctxVisible = true;
     },
-    kill() {
-      if (this.ctxVisible) this.ctxVisible = false;
+    handleMenuOpening(e) {
+      this.kill(e.detail);
+    },
+    kill(e) {
+      // console.log(e);
+      if (e !== this.openEvent) {
+        // console.log('bitch ima kill you');
+        this.ctxVisible = false;
+        this.openEvent = null;
+      }
     }
   },
   computed: {

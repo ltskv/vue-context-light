@@ -2,7 +2,7 @@
   <div @click="kill"
        @contextmenu="kill"
        v-on-clickaway="kill"
-       :id="id" :style="ctxStyle"
+       :style="ctxStyle"
        class="ctx-menu-container">
     <ul role="menu" class="ctx-menu">
       <slot></slot>
