@@ -16,6 +16,13 @@
 
 <style>
 
+.ctx-menu-container {
+  position: fixed;
+  padding: 0;
+  background-color: white;
+  z-index: 99999;
+}
+
 .ctx-menu {
   padding: 0;
   margin: 0;
@@ -24,13 +31,6 @@
 
 .ctx-menu > li:hover {
   cursor: pointer;
-}
-
-.ctx-menu-container {
-  position: fixed;
-  padding: 0;
-  background-color: white;
-  z-index: 99999;
 }
 
 </style>
