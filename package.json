@@ -1,49 +1,15 @@
 {
     "name": "vue-context-light",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
-    "scripts": {
-        "build": "vue-cli-service build --target lib --name vue-context-light ./src/components/ContextMenu.vue",
-        "serve": "vue-cli-service serve"
-    },
-    "main": "./dist/vue-context-light.umd.min.js",
-    "files": ["dist/"],
+    "main": "./src/components/ContextMenu.vue",
+    "files": [
+        "src/"
+    ],
     "dependencies": {
         "vue-clickaway": "^2.2.2"
     },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^4.0.5",
-        "@vue/cli-plugin-eslint": "^4.0.5",
-        "@vue/cli-service": "^4.0.5",
-        "babel-eslint": "^10.0.3",
-        "eslint": "^6.5.1",
-        "eslint-plugin-vue": "^5.2.3",
-        "vue-template-compiler": "^2.6.10"
-    },
     "peerDependencies": {
         "vue": "^2.6.10"
-    },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "extends": [
-            "plugin:vue/essential",
-            "eslint:recommended"
-        ],
-        "rules": {},
-        "parserOptions": {
-            "parser": "babel-eslint"
-        }
-    },
-    "postcss": {
-        "plugins": {
-            "autoprefixer": {}
-        }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
-    ]
+    }
 }
